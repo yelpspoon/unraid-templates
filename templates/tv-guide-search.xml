@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>TV Guide Search</Name>
+  <Repository>yelpspoon/tv-guide-search:latest</Repository>
+  <Registry>https://hub.docker.com/r/yelpspoon/tv-guide-search</Registry>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/yelpspoon/tv-guide-search/issues</Support>
+  <Project>https://github.com/yelpspoon/tv-guide-search</Project>
+  <Overview>One-container TV guide stack: TVheadend, automatic UK/US iptv-org playlists, XMLTV guide generation, and a searchable guide API. API documentation is available on the configured API port at /docs.</Overview>
+  <Category>MediaApp:Video MediaServer:Video</Category>
+  <WebUI>http://[IP]:[PORT:9981]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/yelpspoon/unraid-templates/main/templates/tv-guide-search.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/yelpspoon/unraid-templates/main/images/tv-guide-search.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="TVheadend Web Port" Target="9981" Default="9981" Mode="tcp" Description="TVheadend web interface" Type="Port" Display="always" Required="true" Mask="false">9981</Config>
+  <Config Name="TVheadend HTSP Port" Target="9982" Default="9982" Mode="tcp" Description="TVheadend streaming protocol" Type="Port" Display="always" Required="true" Mask="false">9982</Config>
+  <Config Name="Guide API Port" Target="8080" Default="18080" Mode="tcp" Description="Search API and /docs" Type="Port" Display="always" Required="true" Mask="false">18080</Config>
+  <Config Name="TVheadend Appdata" Target="/config" Default="/mnt/user/appdata/tv-guide-search/tvheadend-config" Mode="rw" Description="TVheadend settings and database" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/tv-guide-search/tvheadend-config</Config>
+  <Config Name="Guide Data" Target="/config/data" Default="/mnt/user/appdata/tv-guide-search/data" Mode="rw" Description="Generated XMLTV guide and channel selection" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/tv-guide-search/data</Config>
+  <Config Name="Recordings" Target="/recordings" Default="/mnt/user/appdata/tv-guide-search/recordings" Mode="rw" Description="TVheadend recordings" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/tv-guide-search/recordings</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Unraid nobody user ID" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Unraid users group ID" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+  <Config Name="Timezone" Target="TZ" Default="America/Chicago" Mode="" Description="Container timezone" Type="Variable" Display="always" Required="true" Mask="false">America/Chicago</Config>
+  <Config Name="Guide Days" Target="XMLTV_DAYS" Default="7" Mode="" Description="Number of XMLTV days to collect" Type="Variable" Display="always" Required="true" Mask="false">7</Config>
+  <Config Name="Guide Refresh Seconds" Target="XMLTV_REFRESH_INTERVAL_SECONDS" Default="21600" Mode="" Description="Regenerate the guide every six hours" Type="Variable" Display="advanced" Required="true" Mask="false">21600</Config>
+  <Config Name="EPG Connections" Target="XMLTV_MAX_CONNECTIONS" Default="5" Mode="" Description="Concurrent EPG source requests" Type="Variable" Display="advanced" Required="true" Mask="false">5</Config>
+  <Config Name="UK Playlist" Target="IPTV_UK_PLAYLIST_URL" Default="https://iptv-org.github.io/iptv/countries/uk.m3u" Mode="" Description="UK IPTV M3U URL" Type="Variable" Display="advanced" Required="false" Mask="false">https://iptv-org.github.io/iptv/countries/uk.m3u</Config>
+  <Config Name="US Playlist" Target="IPTV_US_PLAYLIST_URL" Default="https://iptv-org.github.io/iptv/countries/us.m3u" Mode="" Description="US IPTV M3U URL" Type="Variable" Display="advanced" Required="false" Mask="false">https://iptv-org.github.io/iptv/countries/us.m3u</Config>
+</Container>
