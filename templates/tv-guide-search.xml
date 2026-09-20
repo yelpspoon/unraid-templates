@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>TV Guide Search</Name>
+  <Name>IPTV</Name>
   <Repository>yelpspoon/tv-guide-search:latest</Repository>
   <Registry>https://hub.docker.com/r/yelpspoon/tv-guide-search</Registry>
   <Network>bridge</Network>
@@ -8,9 +8,9 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/yelpspoon/tv-guide-search/issues</Support>
   <Project>https://github.com/yelpspoon/tv-guide-search</Project>
-  <Overview>One-container TV guide stack: TVheadend, automatic UK/US iptv-org playlists, XMLTV guide generation, and a searchable guide API. API documentation is available on the configured API port at /docs.</Overview>
+  <Overview>One-container IPTV and TV guide stack: a unified home screen, TVheadend, automatic UK/US iptv-org playlists, XMLTV guide generation, and a searchable guide API.</Overview>
   <Category>MediaApp:Video MediaServer:Video</Category>
-  <WebUI>http://[IP]:[PORT:9981]/</WebUI>
+  <WebUI>http://[IP]:[PORT:18080]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/yelpspoon/unraid-templates/main/templates/tv-guide-search.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/yelpspoon/unraid-templates/main/images/tv-guide-search.png</Icon>
   <ExtraParams/>
