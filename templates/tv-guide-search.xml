@@ -10,7 +10,7 @@
   <Project>https://github.com/yelpspoon/tv-guide-search</Project>
   <Overview>One-container IPTV and TV guide stack: a unified home screen, TVheadend, automatic UK/US iptv-org playlists, XMLTV guide generation, and a searchable guide API.</Overview>
   <Category>MediaApp:Video MediaServer:Video</Category>
-  <WebUI>http://[IP]:[PORT:18080]/</WebUI>
+  <WebUI>http://[IP]:[PORT:8080]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/yelpspoon/unraid-templates/main/templates/tv-guide-search.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/yelpspoon/unraid-templates/main/images/tv-guide-search.png</Icon>
   <ExtraParams/>
