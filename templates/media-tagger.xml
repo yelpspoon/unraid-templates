@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Media Tagger</Name>
+  <Repository>yelpspoon/media-utilities:latest</Repository>
+  <Registry>https://hub.docker.com/r/yelpspoon/media-utilities/</Registry>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/yelpspoon/media-utilities/issues</Support>
+  <Project>https://github.com/yelpspoon/media-utilities</Project>
+  <TemplateURL>https://raw.githubusercontent.com/yelpspoon/unraid-templates/main/templates/media-tagger.xml</TemplateURL>
+  <Overview>Preview and apply AcoustID/MusicBrainz metadata to a mounted music library.</Overview>
+  <Category>Tools: MediaApp:Other</Category>
+  <WebUI>http://[IP]:[PORT:8501]</WebUI>
+  <Icon>https://raw.githubusercontent.com/yelpspoon/unraid-templates/main/images/media-tagger.png</Icon>
+  <Config Name="Web interface" Target="8501" Default="17681" Mode="tcp" Description="Media Tagger web interface" Type="Port" Display="always" Required="true" Mask="false">17681</Config>
+  <Config Name="Configuration and jobs" Target="/config" Default="/mnt/user/appdata/media-tagger" Mode="rw" Description="Persistent application data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/media-tagger</Config>
+  <Config Name="Music library" Target="/media/music" Default="/mnt/user/Media/music" Mode="rw" Description="Music library to scan and modify" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Media/music</Config>
+  <Config Name="Application mode" Target="APP_MODE" Default="tagger" Mode="" Description="Launch Media Tagger" Type="Variable" Display="advanced-hide" Required="true" Mask="false">tagger</Config>
+  <Config Name="AcoustID API key" Target="ACOUSTID_KEY" Default="" Mode="" Description="AcoustID API key" Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <Config Name="Application name" Target="ACOUSTID_NAME" Default="media-utilities" Mode="" Description="Client name sent to MusicBrainz" Type="Variable" Display="advanced-hide" Required="true" Mask="false">media-utilities</Config>
+  <Config Name="Application version" Target="ACOUSTID_VERSION" Default="0.1.0" Mode="" Description="Client version sent to MusicBrainz" Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.1.0</Config>
+</Container>

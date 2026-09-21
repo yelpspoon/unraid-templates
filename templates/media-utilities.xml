@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Media Utilities</Name>
+  <Repository>yelpspoon/media-utilities:latest</Repository>
+  <Registry>https://hub.docker.com/r/yelpspoon/media-utilities/</Registry>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/yelpspoon/media-utilities/issues</Support>
+  <Project>https://github.com/yelpspoon/media-utilities</Project>
+  <TemplateURL>https://raw.githubusercontent.com/yelpspoon/unraid-templates/main/templates/media-utilities.xml</TemplateURL>
+  <Overview>FLAC-to-MP3 conversion and YouTube audio processing in one web interface.</Overview>
+  <Category>Tools: MediaApp:Other</Category>
+  <WebUI>http://[IP]:[PORT:8501]</WebUI>
+  <Icon>https://raw.githubusercontent.com/yelpspoon/unraid-templates/main/images/media-utilities.png</Icon>
+  <Config Name="Web interface" Target="8501" Default="19666" Mode="tcp" Description="Media Utilities web interface" Type="Port" Display="always" Required="true" Mask="false">19666</Config>
+  <Config Name="Configuration and jobs" Target="/config" Default="/mnt/user/appdata/media-utilities" Mode="rw" Description="Persistent job and configuration data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/media-utilities</Config>
+  <Config Name="Application mode" Target="APP_MODE" Default="utilities" Mode="" Description="Launch the combined conversion and download interface" Type="Variable" Display="advanced-hide" Required="true" Mask="false">utilities</Config>
+</Container>
