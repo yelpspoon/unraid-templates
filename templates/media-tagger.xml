@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>Media Tagger</Name>
-  <Repository>yelpspoon/media-utilities:latest</Repository>
+  <Repository>yelpspoon/media-utilities:puddletag</Repository>
   <Registry>https://hub.docker.com/r/yelpspoon/media-utilities/</Registry>
   <Network>bridge</Network>
   <Shell>sh</Shell>
@@ -9,15 +9,20 @@
   <Support>https://github.com/yelpspoon/media-utilities/issues</Support>
   <Project>https://github.com/yelpspoon/media-utilities</Project>
   <TemplateURL>https://raw.githubusercontent.com/yelpspoon/unraid-templates/main/templates/media-tagger.xml</TemplateURL>
-  <Overview>Preview and apply AcoustID/MusicBrainz metadata to a mounted music library.</Overview>
+  <Overview>Edit music metadata with the native Puddletag Linux application presented securely through a browser-accessible desktop.</Overview>
   <Category>Tools: MediaApp:Other</Category>
-  <WebUI>http://[IP]:[PORT:8501]</WebUI>
+  <WebUI>http://[IP]:[PORT:5800]</WebUI>
   <Icon>https://raw.githubusercontent.com/yelpspoon/unraid-templates/main/images/media-tagger.png</Icon>
-  <Config Name="Web interface" Target="8501" Default="17681" Mode="tcp" Description="Media Tagger web interface" Type="Port" Display="always" Required="true" Mask="false">17681</Config>
-  <Config Name="Configuration and jobs" Target="/config" Default="/mnt/user/appdata/media-tagger" Mode="rw" Description="Persistent application data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/media-tagger</Config>
-  <Config Name="Music library" Target="/media/music" Default="/mnt/user/Media/music" Mode="rw" Description="Music library to scan and modify" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Media/music</Config>
-  <Config Name="Application mode" Target="APP_MODE" Default="tagger" Mode="" Description="Launch Media Tagger" Type="Variable" Display="advanced-hide" Required="true" Mask="false">tagger</Config>
-  <Config Name="AcoustID API key" Target="ACOUSTID_KEY" Default="" Mode="" Description="AcoustID API key" Type="Variable" Display="always" Required="true" Mask="true"></Config>
-  <Config Name="Application name" Target="ACOUSTID_NAME" Default="media-utilities" Mode="" Description="Client name sent to MusicBrainz" Type="Variable" Display="advanced-hide" Required="true" Mask="false">media-utilities</Config>
-  <Config Name="Application version" Target="ACOUSTID_VERSION" Default="0.1.0" Mode="" Description="Client version sent to MusicBrainz" Type="Variable" Display="advanced-hide" Required="true" Mask="false">0.1.0</Config>
+  <Config Name="Web interface" Target="5800" Default="17681" Mode="tcp" Description="Puddletag browser interface" Type="Port" Display="always" Required="true" Mask="false">17681</Config>
+  <Config Name="Configuration" Target="/config" Default="/mnt/user/appdata/media-tagger" Mode="rw" Description="Persistent Puddletag and browser-desktop settings" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/media-tagger</Config>
+  <Config Name="Music library" Target="/storage" Default="/mnt/user/Media/music" Mode="rw" Description="Music library available inside Puddletag as /storage" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Media/music</Config>
+  <Config Name="User ID" Target="USER_ID" Default="1000" Mode="" Description="Host user ID used to read and modify music files" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+  <Config Name="Group ID" Target="GROUP_ID" Default="100" Mode="" Description="Unraid users group ID" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+  <Config Name="File creation mask" Target="UMASK" Default="0002" Mode="" Description="Preserve group write access for modified and newly created files" Type="Variable" Display="advanced" Required="true" Mask="false">0002</Config>
+  <Config Name="Time zone" Target="TZ" Default="America/Chicago" Mode="" Description="Container time zone" Type="Variable" Display="advanced" Required="true" Mask="false">America/Chicago</Config>
+  <Config Name="Keep application running" Target="KEEP_APP_RUNNING" Default="1" Mode="" Description="Restart Puddletag if its window is closed" Type="Variable" Display="advanced" Required="true" Mask="false">1</Config>
+  <Config Name="Display width" Target="DISPLAY_WIDTH" Default="1920" Mode="" Description="Browser desktop width" Type="Variable" Display="advanced" Required="true" Mask="false">1920</Config>
+  <Config Name="Display height" Target="DISPLAY_HEIGHT" Default="1080" Mode="" Description="Browser desktop height" Type="Variable" Display="advanced" Required="true" Mask="false">1080</Config>
+  <Config Name="Dark mode" Target="DARK_MODE" Default="0" Mode="" Description="Set to 1 to use the dark browser and Qt theme" Type="Variable" Display="advanced" Required="true" Mask="false">0</Config>
+  <Config Name="Optional VNC password" Target="VNC_PASSWORD" Default="" Mode="" Description="Optional password protecting the GUI; VNC passwords are limited to eight characters" Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
 </Container>
