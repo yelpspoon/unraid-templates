@@ -12,7 +12,7 @@
   <Overview>Browse and play a read-only SNES and Nintendo 64 library in the browser with RomM, EmulatorJS, Snes9x, and Mupen64Plus-Next. Install the Retro Games Database helper first.</Overview>
   <Category>GameServers: Other:</Category>
   <WebUI>http://[IP]:[PORT:8080]</WebUI>
-  <Icon>https://raw.githubusercontent.com/rommapp/romm/master/frontend/assets/logos/romm_logo_xbox_one_circle.svg</Icon>
+  <Icon>https://raw.githubusercontent.com/yelpspoon/unraid-templates/main/images/retro-games.png</Icon>
   <Config Name="Web interface" Target="8080" Default="17682" Mode="tcp" Description="Retro Games web interface" Type="Port" Display="always" Required="true" Mask="false">17682</Config>
   <Config Name="SNES library" Target="/romm/library/roms/snes" Default="/mnt/user/FilesAndApps/Games/Roms/SNES" Mode="ro" Description="Read-only SNES ROM source" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/FilesAndApps/Games/Roms/SNES</Config>
   <Config Name="Nintendo 64 library" Target="/romm/library/roms/n64" Default="/mnt/user/FilesAndApps/Games/Roms/N64" Mode="ro" Description="Read-only Nintendo 64 ROM source" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/FilesAndApps/Games/Roms/N64</Config>

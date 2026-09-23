@@ -11,7 +11,7 @@
   <TemplateURL>https://raw.githubusercontent.com/yelpspoon/unraid-templates/main/templates/retro-games-db.xml</TemplateURL>
   <Overview>Private MariaDB helper for Retro Games. It publishes no network ports and stores its database under appdata.</Overview>
   <Category>GameServers: Other:</Category>
-  <Icon>https://raw.githubusercontent.com/rommapp/romm/master/frontend/assets/logos/romm_logo_xbox_one_circle.svg</Icon>
+  <Icon>https://raw.githubusercontent.com/yelpspoon/unraid-templates/main/images/retro-games.png</Icon>
   <Config Name="Database storage" Target="/var/lib/mysql" Default="/mnt/user/appdata/retro-games/database" Mode="rw" Description="Persistent MariaDB data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/retro-games/database</Config>
   <Config Name="Secret files" Target="/run/secrets" Default="/mnt/user/appdata/retro-games/secrets" Mode="ro" Description="Generated database secret files" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/retro-games/secrets</Config>
   <Config Name="Database name" Target="MARIADB_DATABASE" Default="romm" Mode="" Description="Database created for RomM" Type="Variable" Display="advanced" Required="true" Mask="false">romm</Config>
