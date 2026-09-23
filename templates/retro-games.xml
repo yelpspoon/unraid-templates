@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>retro-games</Name>
+  <Name>GameUlator</Name>
   <Repository>yelpspoon/retro-games:latest</Repository>
   <Registry>https://hub.docker.com/r/yelpspoon/retro-games/</Registry>
   <Network>bridge</Network>
@@ -13,7 +13,7 @@
   <Category>GameServers: Other:</Category>
   <WebUI>http://[IP]:[PORT:8080]</WebUI>
   <Icon>https://raw.githubusercontent.com/yelpspoon/unraid-templates/main/images/retro-games.png</Icon>
-  <Config Name="Web interface" Target="8080" Default="17682" Mode="tcp" Description="Retro Games web interface" Type="Port" Display="always" Required="true" Mask="false">17682</Config>
+  <Config Name="Web interface" Target="8080" Default="17682" Mode="tcp" Description="GameUlator web interface" Type="Port" Display="always" Required="true" Mask="false">17682</Config>
   <Config Name="SNES library" Target="/romm/library/roms/snes" Default="/mnt/user/FilesAndApps/Games/Roms/SNES" Mode="ro" Description="Read-only SNES ROM source" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/FilesAndApps/Games/Roms/SNES</Config>
   <Config Name="Nintendo 64 library" Target="/romm/library/roms/n64" Default="/mnt/user/FilesAndApps/Games/Roms/N64" Mode="ro" Description="Read-only Nintendo 64 ROM source" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/FilesAndApps/Games/Roms/N64</Config>
   <Config Name="Configuration" Target="/romm/config" Default="/mnt/user/appdata/retro-games/config" Mode="rw" Description="RomM configuration" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/retro-games/config</Config>

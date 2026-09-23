@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>Media Utilities</Name>
+  <Name>media-utilities</Name>
   <Repository>yelpspoon/media-utilities:latest</Repository>
   <Registry>https://hub.docker.com/r/yelpspoon/media-utilities/</Registry>
   <Network>bridge</Network>
