@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Retro Games Database</Name>
+  <Repository>mariadb:11.8</Repository>
+  <Registry>https://hub.docker.com/_/mariadb</Registry>
+  <Network>retro-games-net</Network>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/yelpspoon/retro-games/issues</Support>
+  <Project>https://mariadb.org/</Project>
+  <TemplateURL>https://raw.githubusercontent.com/yelpspoon/unraid-templates/main/templates/retro-games-db.xml</TemplateURL>
+  <Overview>Private MariaDB helper for Retro Games. It publishes no network ports and stores its database under appdata.</Overview>
+  <Category>GameServers: Other:</Category>
+  <Icon>https://raw.githubusercontent.com/rommapp/romm/master/frontend/assets/logos/romm_logo_xbox_one_circle.svg</Icon>
+  <Config Name="Database storage" Target="/var/lib/mysql" Default="/mnt/user/appdata/retro-games/database" Mode="rw" Description="Persistent MariaDB data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/retro-games/database</Config>
+  <Config Name="Secret files" Target="/run/secrets" Default="/mnt/user/appdata/retro-games/secrets" Mode="ro" Description="Generated database secret files" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/retro-games/secrets</Config>
+  <Config Name="Database name" Target="MARIADB_DATABASE" Default="romm" Mode="" Description="Database created for RomM" Type="Variable" Display="advanced" Required="true" Mask="false">romm</Config>
+  <Config Name="Database user" Target="MARIADB_USER" Default="romm" Mode="" Description="Application database user" Type="Variable" Display="advanced" Required="true" Mask="false">romm</Config>
+  <Config Name="Database password file" Target="MARIADB_PASSWORD_FILE" Default="/run/secrets/db_password" Mode="" Description="Application database password secret file" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/run/secrets/db_password</Config>
+  <Config Name="Root password file" Target="MARIADB_ROOT_PASSWORD_FILE" Default="/run/secrets/db_root_password" Mode="" Description="MariaDB root password secret file" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/run/secrets/db_root_password</Config>
+  <Config Name="Time zone" Target="TZ" Default="America/Chicago" Mode="" Description="Container time zone" Type="Variable" Display="advanced" Required="true" Mask="false">America/Chicago</Config>
+</Container>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Retro Games</Name>
+  <Repository>yelpspoon/retro-games:latest</Repository>
+  <Registry>https://hub.docker.com/r/yelpspoon/retro-games/</Registry>
+  <Network>retro-games-net</Network>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/yelpspoon/retro-games/issues</Support>
+  <Project>https://github.com/yelpspoon/retro-games</Project>
+  <TemplateURL>https://raw.githubusercontent.com/yelpspoon/unraid-templates/main/templates/retro-games.xml</TemplateURL>
+  <Overview>Browse and play a read-only SNES and Nintendo 64 library in the browser with RomM, EmulatorJS, Snes9x, and Mupen64Plus-Next. Install the Retro Games Database helper first.</Overview>
+  <Category>GameServers: Other:</Category>
+  <WebUI>http://[IP]:[PORT:8080]</WebUI>
+  <Icon>https://raw.githubusercontent.com/rommapp/romm/master/frontend/assets/logos/romm_logo_xbox_one_circle.svg</Icon>
+  <Config Name="Web interface" Target="8080" Default="17682" Mode="tcp" Description="Retro Games web interface" Type="Port" Display="always" Required="true" Mask="false">17682</Config>
+  <Config Name="SNES library" Target="/romm/library/roms/snes" Default="/mnt/user/FilesAndApps/Games/Roms/SNES" Mode="ro" Description="Read-only SNES ROM source" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/FilesAndApps/Games/Roms/SNES</Config>
+  <Config Name="Nintendo 64 library" Target="/romm/library/roms/n64" Default="/mnt/user/FilesAndApps/Games/Roms/N64" Mode="ro" Description="Read-only Nintendo 64 ROM source" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/FilesAndApps/Games/Roms/N64</Config>
+  <Config Name="Configuration" Target="/romm/config" Default="/mnt/user/appdata/retro-games/config" Mode="rw" Description="RomM configuration" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/retro-games/config</Config>
+  <Config Name="Resources" Target="/romm/resources" Default="/mnt/user/appdata/retro-games/resources" Mode="rw" Description="Downloaded covers and metadata" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/retro-games/resources</Config>
+  <Config Name="Assets" Target="/romm/assets" Default="/mnt/user/appdata/retro-games/assets" Mode="rw" Description="Saves, states, screenshots, and user assets" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/retro-games/assets</Config>
+  <Config Name="Redis data" Target="/redis-data" Default="/mnt/user/appdata/retro-games/redis" Mode="rw" Description="Persistent task and cache data" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/retro-games/redis</Config>
+  <Config Name="Secret files" Target="/run/secrets" Default="/mnt/user/appdata/retro-games/secrets" Mode="ro" Description="Generated database and authentication secrets" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/retro-games/secrets</Config>
+  <Config Name="Database host" Target="DB_HOST" Default="retro-games-db" Mode="" Description="MariaDB container name on retro-games-net" Type="Variable" Display="advanced" Required="true" Mask="false">retro-games-db</Config>
+  <Config Name="Database name" Target="DB_NAME" Default="romm" Mode="" Description="MariaDB database name" Type="Variable" Display="advanced" Required="true" Mask="false">romm</Config>
+  <Config Name="Database user" Target="DB_USER" Default="romm" Mode="" Description="MariaDB application user" Type="Variable" Display="advanced" Required="true" Mask="false">romm</Config>
+  <Config Name="Database password file" Target="DB_PASSWD_FILE" Default="/run/secrets/db_password" Mode="" Description="Database password secret file" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/run/secrets/db_password</Config>
+  <Config Name="Authentication secret file" Target="ROMM_AUTH_SECRET_KEY_FILE" Default="/run/secrets/auth_secret" Mode="" Description="JWT signing secret file" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/run/secrets/auth_secret</Config>
+  <Config Name="Hasheous metadata" Target="HASHEOUS_API_ENABLED" Default="true" Mode="" Description="Enable metadata matching without private API credentials" Type="Variable" Display="advanced" Required="true" Mask="false">true</Config>
+  <Config Name="Time zone" Target="TZ" Default="America/Chicago" Mode="" Description="Container time zone" Type="Variable" Display="advanced" Required="true" Mask="false">America/Chicago</Config>
+</Container>
