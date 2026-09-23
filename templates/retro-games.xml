@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>Retro Games</Name>
+  <Name>retro-games</Name>
   <Repository>yelpspoon/retro-games:latest</Repository>
   <Registry>https://hub.docker.com/r/yelpspoon/retro-games/</Registry>
   <Network>retro-games-net</Network>

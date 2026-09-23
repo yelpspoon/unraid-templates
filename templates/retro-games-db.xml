@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>Retro Games Database</Name>
+  <Name>retro-games-db</Name>
   <Repository>mariadb:11.8</Repository>
   <Registry>https://hub.docker.com/_/mariadb</Registry>
   <Network>retro-games-net</Network>
